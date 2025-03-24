@@ -4,28 +4,32 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const apiFeatchUsersdata = createAsyncThunk("feathdata", async () => {
     let res = await fetch(`http://localhost:3000/Users`);
     let data = await res.json();
-    console.log("login user data ", data);
-
-    console.log(data);
     return data;
 
-
 })
+
 export const loginUserData = createAsyncThunk("auth/login", async (userData, { rejectWithValue }) => {
     try {
         let res = await fetch(`http://localhost:3000/Users?email=${userData.email}&password=${userData.password}`);
-        let data = res.json();
+        let data = await res.json();
+        
         console.log("login user data ", data);
         if (data.length === 0) {
             return rejectWithValue("Invalid User");
         }
-        if (data.email !== userData.email) {
+        const user = data.find((u) => u.email === userData.email || u.password === password);
+        localStorage.setItem("user", JSON.stringify(user));
+
+        if (!user) {
             return rejectWithValue("Email ID not registered!");
         }
-        if (data.password !== userData.password) {
+
+        if (user.password !== userData.password) {
             return rejectWithValue("Password not match!");
         }
-        return data;
+        console.log("your user is", user);
+
+        return user;
 
     }
     catch (error) {

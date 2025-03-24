@@ -1,0 +1,32 @@
+{
+  "Users": [
+    {
+      "id": "NrjMeqUPoKJULYfBw783X",
+      "name": "rahul",
+      "email": "rahu123@gmail.com",
+      "number": "1234567890",
+      "password": "1234"
+    },
+    {
+      "id": "wRzyc7vuQguSQ0QoRT4ck",
+      "name": "anitosh",
+      "email": "anitosh45@gmail.com",
+      "number": "09877",
+      "password": "1234"
+    },
+    {
+      "id": "7gVEmifbgoNYFLaUG1wGk",
+      "name": "joni",
+      "email": "joni123@gmail.com",
+      "number": "1234",
+      "password": "1234"
+    },
+    {
+      "id": "cLAfXkQWrqOeHDpx-0gHF",
+      "name": "suborna halder",
+      "email": "suborna@gmail.com",
+      "number": "123456",
+      "password": "1234"
+    }
+  ]
+}

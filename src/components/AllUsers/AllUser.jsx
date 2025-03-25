@@ -14,7 +14,7 @@ function AllUser() {
     const handleTogglePasswordVisibility = (userId) => {
         setVisiblePasswords((prev) => ({
             ...prev,
-            [userId]: !prev[userId],  
+            [userId]: !prev[userId],
         }));
     };
 
@@ -36,11 +36,11 @@ function AllUser() {
     };
 
     return (
-        <div className="container mx-auto p-4 mt-5">
+        <div className="container mx-auto p-4 mt-5 ">
             <Link to={'/'} className="bg-green-600 p-5 rounded text-white">Back</Link>
             <h1 className="text-2xl font-bold mb-4 mt-5">User Table</h1>
             <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
+                <table className="min-w-full bg-white border border-gray-300 shadow rounded-3xl">
                     <thead>
                         <tr>
                             <th className="px-4 py-2 border">User ID</th>
@@ -55,12 +55,12 @@ function AllUser() {
                         {userData.length > 0 ? (
                             userData.map((user) => (
                                 <tr key={user.id}>
-                                    <td className="px-4 py-2 border">{user.id}</td>
-                                    <td className="px-4 py-2 border">{user.name}</td>
-                                    <td className="px-4 py-2 border">{user.number}</td>
-                                    <td className="px-4 py-2 border">{user.email}</td>
-                                    <td className="px-4 py-2 border flex items-center gap-2">
-                                        <span>{visiblePasswords[user.id] ? user.password : "****"}</span>
+                                    <td className="px-4 py-2 border">{user.id || 'N/A'}</td>
+                                    <td className="px-4 py-2 border">{user.name || 'N/A'}</td>
+                                    <td className="px-4 py-2 border">{user.number || 'N/A'}</td>
+                                    <td className="px-4 py-2 border">{user.email || 'N/A'}</td>
+                                    <td className="px-4 py-2 border flex items-center gap-4">
+                                        <span className="d-inline-block w-[150px] ">{visiblePasswords[user.id] ? user.password : "****"}</span>
                                         <button onClick={() => handleTogglePasswordVisibility(user.id)} className="ml-2">
                                             {visiblePasswords[user.id] ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
                                         </button>

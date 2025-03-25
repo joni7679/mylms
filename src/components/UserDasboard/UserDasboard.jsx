@@ -18,6 +18,7 @@ function UserDasboard() {
         if (confim) {
             localStorage.removeItem("user");
             setUserData(null);
+            navigate('/login');
         }
 
     }
@@ -27,9 +28,9 @@ function UserDasboard() {
 
             <div className='w-full p-5 bg-orange-600 text-white flex justify-between items-center'>
                 {userData ? (
-                    <h2>Welcome to your dashboard, {userData.name}!</h2>
+                    <h2>Welcome to your dashboard, {userData.name ||"Guest" }! </h2>
                 ) : (
-                    navigate('/')
+                    null
                 )}
 
                 <button onClick={handleLogout} className='px-[25px] py-[10px] rounded-2xl bg-blue-400 text-white '>Log Out</button>

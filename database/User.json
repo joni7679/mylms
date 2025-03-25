@@ -1,46 +1,32 @@
 {
   "Users": [
     {
-      "id": "wRzyc7vuQguSQ0QoRT4ck",
-      "name": "anitosh",
-      "email": "anitosh45@gmail.com",
-      "number": "09877",
-      "password": "1234"
-    },
-    {
-      "id": "7gVEmifbgoNYFLaUG1wGk",
+      "id": "2-j0P_5-BGKpUfPyLj2kb",
       "name": "Joni Halder",
-      "email": "joni814@gmail.com",
+      "email": "joni123@gmail.com",
       "number": "7679178908",
-      "password": "Coder"
+      "password": "111dr"
     },
     {
-      "id": "cLAfXkQWrqOeHDpx-0gHF",
-      "name": "suborna my life bestie",
-      "email": "suborna@gmail.com",
-      "number": "123456",
-      "password": "1234"
+      "id": "GEAgFPlkEvEds2OGVrxH0",
+      "name": "rahul sev",
+      "email": "rahu123@gmail.com",
+      "number": "87665",
+      "password": "ddd"
     },
     {
-      "id": "FDOvX7F2kYuLpOsQ1d_JT",
+      "id": "63KLBKq2l-qFQs_FHrX0z",
       "name": "joni halder",
-      "email": "joni1232@gmail.com",
-      "number": "0987654321",
-      "password": "1234"
+      "email": "jack@gmail.com",
+      "number": "12345680",
+      "password": "dd444"
     },
     {
-      "id": "eY29VLDJZS7Cg4FuHIUhg",
-      "name": "raja halder",
-      "email": "rajasencoder@gmail.com",
-      "number": "7679178908",
-      "password": "1234"
-    },
-    {
-      "id": "H_ev9sdcfNkTMoepUC7nO",
-      "name": "kakoli",
-      "email": "kakoli@gmail.com",
-      "number": "878",
-      "password": "1234"
+      "id": "fQ8wb2qolPgHlvFztJKbz",
+      "name": "anitosh halder",
+      "email": "abhijit@gmail.com",
+      "number": "111444",
+      "password": "sss3"
     }
   ]
 }

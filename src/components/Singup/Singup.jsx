@@ -44,6 +44,7 @@ function Signup() {
             .then((res) => {
                 dispatch(addUser(res.data));
                 toast.success("Data Added Successfully");
+                navigate(`/userlist`)
             })
             .catch((err) => {
                 console.error("Error adding user:", err);

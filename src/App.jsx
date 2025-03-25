@@ -5,9 +5,9 @@ import { useDispatch } from 'react-redux'
 import { fetchUserData } from './Reducx/UserSlice/UserSlice'
 
 function App() {
-let dispatch=useDispatch()
+  let dispatch = useDispatch()
   useEffect(() => {
-    axios.get("http://localhost:3000/Users").then((res)=>{
+    axios.get("http://localhost:3000/Users").then((res) => {
       console.log(res.data);
       dispatch(fetchUserData(res.data))
     })
@@ -16,7 +16,10 @@ let dispatch=useDispatch()
 
   return (
     <>
-      <Singup />
+      <main className='  w-full h-screen'>
+        <Singup />
+
+      </main>
 
     </>
   )

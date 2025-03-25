@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 
 export const apiFeatchUsersdata = createAsyncThunk("feathdata", async () => {
@@ -7,16 +8,14 @@ export const apiFeatchUsersdata = createAsyncThunk("feathdata", async () => {
     return data;
 
 })
-
+//  login user data
 export const loginUserData = createAsyncThunk("auth/login", async (userData, { rejectWithValue }) => {
     try {
         let res = await fetch(`http://localhost:3000/Users?email=${userData.email}&password=${userData.password}`);
         let data = await res.json();
-        
+
         console.log("login user data ", data);
-        if (data.length === 0) {
-            return rejectWithValue("Invalid User");
-        }
+
         const user = data.find((u) => u.email === userData.email || u.password === password);
         localStorage.setItem("user", JSON.stringify(user));
 
@@ -38,6 +37,21 @@ export const loginUserData = createAsyncThunk("auth/login", async (userData, { r
 
 
 })
+
+// delete user data
+export const deleteUserData = createAsyncThunk("delete/user", async (id, { rejectWithValue }) => {
+    try {
+        await axios.delete(`http://localhost:3000/Users/${id}`).then((res) => {
+            console.log(res.data);
+            return id;
+        })
+    } catch (error) {
+        return rejectWithValue(error.message);
+    }
+});
+
+// edit user data
+export const editUserData = createAsyncThunk("edit/user", async (data, { rejectWithValue }) => { });
 
 
 // initial state
@@ -104,6 +118,14 @@ export let UserSlice = createSlice({
         })
         action.addCase(loginUserData.rejected, (state, action) => {
             state.error = action.payload || action.error.message;
+        })
+        action.addCase(deleteUserData.pending, (state, action) => {
+            state.isLoading = true
+        })
+        action.addCase(deleteUserData.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.users = state.users.filter((value, index) => value.id !== action.payload)
+
         })
 
     }

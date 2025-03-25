@@ -4,6 +4,8 @@ import AllUser from "../components/AllUsers/AllUser";
 import Edit from "../components/Edit/Edit";
 import Login from "../components/Login/Login";
 import UserDasboard from "../components/UserDasboard/UserDasboard";
+import ProtectedRoute from "../components/ProtectedRoute";
+// import ProtectedRoute from "../components/ProtectedRoute";
 
 export let router = createBrowserRouter(
     [
@@ -30,6 +32,8 @@ export let router = createBrowserRouter(
         {
             path: "/dasboard",
             element: <UserDasboard />
+
+
         }
     ]
 );

@@ -28,7 +28,7 @@ function Signup() {
             toast.error("plz filled all the filled")
         }
         else {
-            navigate('/userlist');
+            // navigate('/userlist');
             //rest form
             setName('');
             setEmail('');
